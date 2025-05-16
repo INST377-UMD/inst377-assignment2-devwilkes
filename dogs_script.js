@@ -19,6 +19,40 @@ async function getSpecificDog(breed){
     })
 }
 
+async function getDogInfo(breed){
+    const infoFetch = await fetch("https://dogapi.dog/api-docs/v2//breeds/{"+ breed + "}")
+    .then(response => response.json())
+    .then(data => {
+        const name = data.name;
+        const description = data.description;
+        const minLife = data.life.min;
+        const maxLife = data.life.max;
+    })
+}
+
+async function getAllDogBreeds(){
+    const breedFetch = await fetch("https://dogapi.dog/docs/api-v2/breeds")
+    .then(response => response.json())
+    .then(data => {
+        breedList = [];
+        data.forEach(breed => {
+            breedList.push(breed);
+        });
+    })
+}
+
+function generateBreedButtons(){
+    const breedList = getAllDogBreeds();
+    breedList.forEach(breed => {
+        const button = document.createElement('button');
+        button.className = "button-19";
+        button.innerHTML = breed;
+        button.onclick = function() {
+            document.createElement('')
+        }
+        document.body.appendChild(button);
+    });
+}
 // put a wait/fetch statement for each method
 
 window.onload = loadRandomDogs();

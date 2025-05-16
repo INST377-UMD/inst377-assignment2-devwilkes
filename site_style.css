@@ -104,8 +104,32 @@ quote-generator h3 {
   background: none;
 }
 
-#listener-nav {
-  background-color: #dcfff7;
+.quote-generator {
+  background-color: #0a2e0e;
+  color: #dcfff7;
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.listener-nav {
+  background-color: #a3ffce;
+  border: 2px;
+  border-color: #118c44;
+  border-style: solid;
+  border-radius: 12px;
+  padding: 24px 32px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stock-ticker {
+  background-color: #0a2e0e;
+  color: #dcfff7;
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
 }

@@ -1,8 +1,11 @@
 import { restClient } from '@polygon.io/client-js';
 
-function getTopFiveStocks(){
-    fetch("https://tradestie.com/api/v1/apps/reddit?date=2022-04-03")
+async function getTopFiveStocks(){
+    const topStocks = fetch("https://tradestie.com/api/v1/apps/reddit?date=2022-04-03")
     .then(response => response.json())
+	.then(data => {
+	})
+	return topStocks;
 }
 
 function getStockActivity(){

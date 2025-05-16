@@ -6,7 +6,7 @@
     <meta name="description" content="" />
     <link
       rel="stylesheet"
-      href="/inst377-assignment2-devwilkes/site_style.css"
+      href="site_style.css"
     />
     <script src="stocks_script.js" async defer></script>
   </head>
@@ -17,7 +17,7 @@
   <nav>
     <ul>
       <li>
-        <a href="/inst377-assignment2-devwilkes/home-page/home_page.html"
+        <a href="home_page.html"
           >Home</a
         >
       </li>
@@ -25,7 +25,7 @@
         <a href="stocks_page.html">Stocks</a>
       </li>
       <li>
-        <a href="/inst377-assignment2-devwilkes/dogs-page/dogs_page.html"
+        <a href="dogs_page.html"
           >Dogs</a
         >
       </li>
@@ -58,13 +58,12 @@
         <li>Change the page color!</li>
         <li>Have the website say hello back!</li>
       </ul>
-      <button id="voice-on" onclick="annyang.stop()">
-        Turn off voice functions
-      </button>
-      <button id="voice-off" onclick="annyang.start()">
+      <button id="voice-on" onclick="annyang.start()" class="button-19">
         Turn on voice functions
       </button>
+      <button id="voice-off" onclick="annyang.abort()" class = "button-19">
+        Turn off voice functions
+      </button>
     </div>
-    
   </body>
 </html>
