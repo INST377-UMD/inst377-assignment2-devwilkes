@@ -41,7 +41,7 @@ quote-generator h3 {
 
 .button-19 {
   appearance: button;
-  background-color: #1899d6;
+  background-color: #178c11;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
@@ -72,7 +72,7 @@ quote-generator h3 {
 
 .button-19:after {
   background-clip: padding-box;
-  background-color: #1cb0f6;
+  background-color: #17d139;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
@@ -102,4 +102,10 @@ quote-generator h3 {
 .button-19:active {
   border-width: 4px 0 0;
   background: none;
+}
+
+#listener-nav {
+  background-color: #dcfff7;
+  display: flex;
+  justify-content: center;
 }
