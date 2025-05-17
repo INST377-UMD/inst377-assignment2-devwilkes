@@ -6,6 +6,7 @@
     <meta name="description" content="" />
     <link rel="stylesheet" href="site_style.css" />
     <script src="dogs_script.js" async defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
   </head>
 
   <header>
@@ -50,10 +51,10 @@
         <li>Have the website say hello back!</li>
         <li>Pull up an image of a specific dog breed!</li>
       </ul>
-      <button id="voice-on" onclick="annyang.start()" class="button-19">
+      <button id="voice-on" onclick="turnOnAnnyang()" class="button-19">
         Turn on voice functions
       </button>
-      <button id="voice-off" onclick="annyang.abort()" class="button-19">
+      <button id="voice-off" onclick="turnOffAnnyang()" class="button-19">
         Turn off voice functions
       </button>
     </div>

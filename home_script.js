@@ -35,17 +35,25 @@ function audioListener(src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annya
             "navigate to *page": function () {
               if ("*page" == "home") {
                 window.location.href =
-                  "/inst377-assignment2-devwilkes/home-page/home_page.html";
+                  "home_page.html";
               } else if ("*page" == "stocks") {
                 window.location.href =
-                  "/inst377-assignment2-devwilkes/stocks-page/stocks_page.html";
+                  "stocks_page.html";
               } else if ("*page" == "dogs") {
                 window.location.href =
-                  "/inst377-assignment2-devwilkes/dogs-page/dogs_page.html";
+                  "dogs_page.html";
               }
             },
           };
         }
+}
+
+function turnOnAnnyang() {
+annyang.start()
+}
+
+function turnOffAnnyang() {
+annyang.abort()
 }
 
 window.onload = getZenQuotes();
