@@ -1,4 +1,5 @@
 import { restClient } from '@polygon.io/client-js';
+const stockInfoAPI = "https://api.polygon.io/v3/reference/dividends?apiKey=ZnmZWgJk6oIysTWu6E2NFgPKD5jbrpss";
 
 async function getTopFiveStocks(){
     const topStocks = fetch("https://tradestie.com/api/v1/apps/reddit?date=2022-04-03")
@@ -27,6 +28,19 @@ rest.stocks.aggregates(
 }).catch(e => {
 	console.error('An error happened:', e);
 });
+}
+
+function getStockInfo(){
+  const ticker = document.getElementById("ticker");
+  fetch(stockInfoAPI)
+  .then(response => response.json())
+  .then(data => {
+    const tickerList = []
+    data.tickers.forEach(ticker => {
+      tickerList.push(ticker.ticker);
+  )}
+    });
+  }
 }
 
 function audioListener(){
