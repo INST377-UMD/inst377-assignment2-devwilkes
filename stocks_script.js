@@ -38,9 +38,8 @@ function getStockInfo(){
     const tickerList = []
     data.tickers.forEach(ticker => {
       tickerList.push(ticker.ticker);
-  )}
     });
-  }
+  });
 }
 
 function audioListener(){
