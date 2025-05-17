@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DogStocks</title>
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="site_style.css" />
+    <script src="home_script.js" async defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+  </head>
+
+  <header>
+    <h1>Welcome to DogStocks</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="home_page.html">Home</a></li>
+      <li>
+        <a href="stocks_page.html">Stocks</a>
+      </li>
+      <li>
+        <a href="dogs_page.html">Dogs</a>
+      </li>
+    </ul>
+  </nav>
+
+  <body>
+    <div>
+      <button
+        class="button-19"
+        onclick="window.location.href='stocks_page.html'"
+      >
+        See some Stocks
+      </button>
+      <button class="button-19" onclick="window.location.href='dogs_page.html'">
+        See some Dogs
+      </button>
+    </div>
+
+    <div class="quote-generator">
+      <h2>Quick Quote:</h2>
+      <h3 id="quote"></h3>
+      <p id="author"></p>
+    </div>
+
+    <div class="listener-nav">
+      <h1>This website can be navigated by voice!</h1>
+      <h2>When you use your microphone you can:</h2>
+      <ul>
+        <li>Navigate to a different page!</li>
+        <li>Change the page color!</li>
+        <li>Have the website say hello back!</li>
+      </ul>
+      <button id="voice-on" onclick="turnOnAnnyang()" class="button-19">
+        Turn on voice functions
+      </button>
+      <button id="voice-off" onclick="turnOffAnnyang()" class="button-19">
+        Turn off voice functions
+      </button>
+    </div>
+  </body>
+</html>
