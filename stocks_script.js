@@ -28,3 +28,39 @@ rest.stocks.aggregates(
 	console.error('An error happened:', e);
 });
 }
+
+function audioListener(){
+        if (annyang) {
+          var commands = {
+            "say hello": () => {
+              alert("Hello world!");
+              console.log("Hello world!");
+            },
+
+            "change the color to *color": function () {
+              document.body.style["background-color"] = "*color";
+            },
+
+            "navigate to *page": function () {
+              if ("*page" == "home") {
+                window.location.href =
+                  "home_page.html";
+              } else if ("*page" == "stocks") {
+                window.location.href =
+                  "stocks_page.html";
+              } else if ("*page" == "dogs") {
+                window.location.href =
+                  "dogs_page.html";
+              }
+            },
+          };
+        }
+}
+
+function turnOnAnnyang() {
+annyang.start()
+}
+
+function turnOffAnnyang() {
+annyang.abort()
+}

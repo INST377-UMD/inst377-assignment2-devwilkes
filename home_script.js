@@ -20,7 +20,7 @@ function getZenQuotes(){
         })
 }
 
-function audioListener(src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"){
+function audioListener(){
         if (annyang) {
           var commands = {
             "say hello": () => {
