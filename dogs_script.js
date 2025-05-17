@@ -8,39 +8,32 @@ function loadRandomDogs(){
     })
 }
 
-async function getDogInfo(breed){
-    const infoFetch = await fetch("https://dogapi.dog/api-docs/v2//breeds/{"+ breed + "}")
+function getDogInfo(breed){
+    fetch("https://dogapi.dog/api/v2/breeds/{"+ breed + "}")
     .then(response => response.json())
     .then(data => {
-        const name = data.name;
-        const description = data.description;
-        const minLife = data.life.min;
-        const maxLife = data.life.max;
+        const name = data.data.name;
+        const description = data.data.description;
+        const minLife = data.data.life.min;
+        const maxLife = data.data.life.max;
     })
 }
 
 function getAllDogBreeds(){
-   fetch("https://dogapi.dog/docs/api-v2/breeds")
+   fetch("https://dogapi.dog/api/v2/breeds")
     .then(response => response.json())
     .then(data => {
-        breedList = [];
-        data.forEach(breed => {
-            breedList.push(breed);
-        });
+        console.log(data);
+        console.log(data.data);
+        data.data.forEach((breed) => {
+          const button = document.createElement('button');
+          button.className = "button-19";
+          button.innerHTML = breed;
+          button.addEventListener('click', () => getDogInfo(breed));
+          document.body.appendChild(button);
+        });       
+        return data.data;
     })
-}
-
-function generateBreedButtons(){
-    const breedList = getAllDogBreeds();
-    breedList.forEach(breed => {
-        const button = document.createElement('button');
-        button.className = "button-19";
-        button.innerHTML = breed;
-        button.onclick = function() {
-            document.createElement('')
-        }
-        document.body.appendChild(button);
-    });
 }
 
 function audioListener(){
