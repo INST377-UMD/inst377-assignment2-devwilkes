@@ -10,6 +10,7 @@
     />
     <script src="stocks_script.js" async defer></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
 
   <header>
@@ -34,8 +35,10 @@
   </nav>
 
   <body>
+
+    <table id = "redditStocks"> </table>
     <div class="stock-ticker">
-      <form>
+      <form onsubmit= generateChart()>
         <input type="text" id="ticker" placeholder="Enter a stock ticker" />
         <label for = "timeframe">Select a Timeframe:</label>
           <select id = "timeframe">
@@ -49,8 +52,8 @@
       </form>
     </div>
 
-    <div class = "stock-display">
-      
+    <div>
+      <canvas id="myChart"></canvas>
     </div>
 
      <div class="listener-nav">

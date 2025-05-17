@@ -133,3 +133,7 @@ quote-generator h3 {
   padding: 20px;
   text-align: center;
 }
+
+.dog-display {
+  align-items: center;
+}

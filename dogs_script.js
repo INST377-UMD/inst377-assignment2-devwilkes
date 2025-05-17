@@ -1,21 +1,10 @@
-async function loadRandomDogs(){
-    const dogFetch =  await fetch("https://dog.ceo/api/breeds/image/random/10")
-    .then(response => response.json())
+function loadRandomDogs(){
+    fetch("https://dog.ceo/api/breeds/image/random/10")
+    .then(data => data.json())
     .then(data => {
-        const dogImages = data.message;
-        dogImages.forEach(dog => {
-            const img = document.createElement('img');
-            img.src = dog;
-        });
-    })
-    return dogFetch
-}
-
-async function getSpecificDog(breed){
-    const breedFetch = await fetch("https://dog.ceo/api/breeds/image/")
-    .then(response => response.json())
-    .then(data => {
-        const dog = data.message;
+        for (let i = 0; i < 10; i++) {
+          document.getElementById(`img${i + 1}`).src = data.message[i];
+        }
     })
 }
 
@@ -30,8 +19,8 @@ async function getDogInfo(breed){
     })
 }
 
-async function getAllDogBreeds(){
-    const breedFetch = await fetch("https://dogapi.dog/docs/api-v2/breeds")
+function getAllDogBreeds(){
+   fetch("https://dogapi.dog/docs/api-v2/breeds")
     .then(response => response.json())
     .then(data => {
         breedList = [];
@@ -53,7 +42,6 @@ function generateBreedButtons(){
         document.body.appendChild(button);
     });
 }
-// put a wait/fetch statement for each method
 
 function audioListener(){
         if (annyang) {
@@ -79,6 +67,11 @@ function audioListener(){
                   "dogs_page.html";
               }
             },
+
+            "load dog breed *breed": function () {
+              const breed = "*breed";
+              getDogInfo(breed);
+            },
           };
         }
 }
@@ -91,4 +84,7 @@ function turnOffAnnyang() {
 annyang.abort()
 }
 
-window.onload = loadRandomDogs();
+window.onload = function (){
+  loadRandomDogs();
+  generateBreedButtons();
+};
