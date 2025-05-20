@@ -19,8 +19,8 @@ function getDogInfo(breed){
     })
 }
 
-function getAllDogBreeds(){
-   fetch("https://dogapi.dog/api/v2/breeds")
+async function getAllDogBreeds(){
+   const breeds = fetch("https://dogapi.dog/api/v2/breeds")
     .then(response => response.json())
     .then(data => {
         console.log(data);
